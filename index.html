@@ -1,11 +1,193 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>黃聖剛的GitHub io</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHENG-GANG HUANG - Resume</title>
+<style>
+    /* 基本設定 */
+    body {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+        background-color: #f0f2f5; /* 接近 GitHub 的背景色 */
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    /* 主容器，模擬文件外觀 */
+    .resume {
+        width: 100%;
+        max-width: 700px; /* 設定一個常見的閱讀寬度 */
+        background-color: #ffffff; /* 文件背景為白色 */
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* 通用區塊樣式 */
+    .block {
+        padding: 1.75rem 2.5rem; /* 區塊的內邊距 */
+        border-bottom: 1px solid #d0d7de; /* 區塊之間的分隔線 */
+    }
+
+    .block:last-child {
+        border-bottom: none; /* 最後一個區塊不需要分隔線 */
+    }
+
+    /* 頭像區塊 */
+    .block-header {
+        text-align: center;
+        padding-top: 2.5rem;
+    }
+    .profile-image-wrapper {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 2px solid #d0d7de;
+        display: inline-block;
+        overflow: hidden; /* 確保圖片不超出圓形邊框 */
+    }
+    .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* 姓名和個人資訊區塊 */
+    .block-info {
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .name {
+        font-size: 26px;
+        font-weight: 600;
+        margin: 0;
+    }
+    .personal-details {
+        font-size: 16px;
+        color: #555;
+        margin-top: 0.5rem;
+    }
+
+    /* 內容區塊標題 */
+    .section-title {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0 0 1.5rem 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    /* 列表樣式 */
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        margin-bottom: 1.5rem;
+    }
+    li:last-child {
+        margin-bottom: 0;
+    }
+
+    /* 項目樣式 */
+    .item-primary {
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .item-secondary {
+        font-size: 15px;
+        color: #333;
+        margin-top: 0.25rem;
+    }
+
+    /* 證照列表樣式 */
+    .certificates-list li {
+        margin-bottom: 0.75rem; /* 證照列表行距較小 */
+        font-size: 15px;
+    }
+
+</style>
 </head>
 <body>
-  <h1>黃聖剛的GitHub.io</h1>
+
+<div class="resume">
+
+    <div class="block block-header">
+        <div class="profile-image-wrapper">
+            <img src="https://i.imgur.com/nQ1gZDJ.png" alt="Profile Picture" class="profile-image">
+        </div>
+    </div>
+
+    <div class="block block-info">
+        [cite_start]<p class="name">SHENG-GANG HUANG [cite: 1]</p>
+        [cite_start]<p class="personal-details">出生:1999/12/23(26歲) 兵役:役畢 [cite: 2]</p>
+    </div>
+
+    <div class="block">
+        [cite_start]<h2 class="section-title">Education [cite: 3]</h2>
+        <ul>
+            <li>
+                [cite_start]<div class="item-primary">國立台北大學 [cite: 4]</div>
+                <div class="item-secondary">經濟學系 | [cite_start]2018-2022 [cite: 5]</div>
+            </li>
+            <li>
+                [cite_start]<div class="item-primary">新北市立淡水商工 [cite: 6]</div>
+                <div class="item-secondary">資料處理科 | [cite_start]2015-2018 [cite: 7]</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="block">
+        [cite_start]<h2 class="section-title">Work Experience [cite: 8]</h2>
+        <ul>
+            <li>
+                [cite_start]<div class="item-primary">行銷美編 [cite: 9]</div>
+                <div class="item-secondary">台灣諾得股份有限公司 | [cite_start]2024.07-2025.07(預計) [cite: 10]</div>
+            </li>
+            <li>
+                [cite_start]<div class="item-primary">行銷企劃 [cite: 11]</div>
+                <div class="item-secondary">財團法人中衛發展中心 | [cite_start]2024.03-2024.07 [cite: 12]</div>
+            </li>
+            <li>
+                [cite_start]<div class="item-primary">法務助理管理員 [cite: 13]</div>
+                <div class="item-secondary">華碩電腦股份有限公司 | [cite_start]2023.02-2023.06 [cite: 14]</div>
+            </li>
+             <li>
+                [cite_start]<div class="item-primary">資訊工程師 [cite: 15]</div>
+                <div class="item-secondary">台灣增輝藝品有限公司 | [cite_start]2021.04-2022.07 [cite: 16]</div>
+            </li>
+             <li>
+                [cite_start]<div class="item-primary">法務助理管理員 [cite: 17]</div>
+                <div class="item-secondary">華碩電腦股份有限公司 | [cite_start]2019.07-2021.02 [cite: 18]</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="block">
+        [cite_start]<h2 class="section-title">Certificate [cite: 20]</h2>
+        <ul class="certificates-list">
+            [cite_start]<li>電腦軟體應用(丙級) [cite: 21]</li>
+            [cite_start]<li>ISO-14064 [cite: 22]</li>
+            [cite_start]<li>ISO-14067 [cite: 23]</li>
+            [cite_start]<li>Google Analytics(分析) [cite: 24]</li>
+            [cite_start]<li>信託業務員 [cite: 25]</li>
+            [cite_start]<li>投信投顧法規(乙科) [cite: 26]</li>
+            [cite_start]<li>金融常識道德 [cite: 27]</li>
+            [cite_start]<li>TQC-WORD [cite: 28]</li>
+            [cite_start]<li>TQC-Powerpoint [cite: 29]</li>
+        </ul>
+    </div>
+
+    <div class="block">
+        <h2 class="section-title">Portfolio</h2>
+        [cite_start]<p>NONE [cite: 19]</p>
+    </div>
+
+</div>
+
 </body>
 </html>
