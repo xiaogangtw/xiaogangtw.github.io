@@ -1,194 +1,229 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHENG-GANG HUANG</title>
-<style>
-    /* 基本設定 */
-    body {
-        display: flex;
-        justify-content: center;
-        padding: 2rem 0;
-        background-color: #f0f2f5; /* 接近 GitHub 的背景色 */
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
-        line-height: 1.6;
-    }
-
-    /* 主容器，模擬文件外觀 */
-    .resume {
-        width: 100%;
-        max-width: 700px; /* 設定一個常見的閱讀寬度 */
-        background-color: #ffffff; /* 文件背景為白色 */
-        border: 1px solid #d0d7de;
-        border-radius: 6px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    /* 通用區塊樣式 */
-    .block {
-        padding: 1.75rem 2.5rem; /* 區塊的內邊距 */
-        border-bottom: 1px solid #d0d7de; /* 區塊之間的分隔線 */
-    }
-
-    .block:last-child {
-        border-bottom: none; /* 最後一個區塊不需要分隔線 */
-    }
-
-    /* 頭像區塊 */
-    .block-header {
-        text-align: center;
-        padding-top: 2.5rem;
-    }
-    .profile-image-wrapper {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 2px solid #d0d7de;
-        display: inline-block;
-        overflow: hidden; /* 確保圖片不超出圓形邊框 */
-    }
-    .profile-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 50% 20%; /* 這裡就是調整圖片位置的關鍵 */
-    }
-
-    /* 姓名和個人資訊區塊 */
-    .block-info {
-        text-align: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-    .name {
-        font-size: 26px;
-        font-weight: 600;
-        margin: 0;
-    }
-    .personal-details {
-        font-size: 16px;
-        color: #555;
-        margin-top: 0.5rem;
-    }
-
-    /* 內容區塊標題 */
-    .section-title {
-        font-size: 22px;
-        font-weight: 600;
-        margin: 0 0 1.5rem 0;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid #eaeaea;
-    }
-
-    /* 列表樣式 */
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    li {
-        margin-bottom: 1.5rem;
-    }
-    li:last-child {
-        margin-bottom: 0;
-    }
-
-    /* 項目樣式 */
-    .item-primary {
-        font-size: 17px;
-        font-weight: bold;
-    }
-    .item-secondary {
-        font-size: 15px;
-        color: #333;
-        margin-top: 0.25rem;
-    }
-
-    /* 證照列表樣式 */
-    .certificates-list li {
-        margin-bottom: 0.75rem; /* 證照列表行距較小 */
-        font-size: 15px;
-    }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHENG-GANG HUANG - 履歷</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 8px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #3B82F6;
+        }
+        .job-item:not(:last-child) {
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .certificate-tag {
+            display: inline-block;
+            background-color: #F3F4F6;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin: 0.25rem 0.25rem 0.25rem 0;
+            border-left: 3px solid #3B82F6;
+        }
+        .personal-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .personal-info-item i {
+            width: 20px;
+            color: #3B82F6;
+            margin-right: 12px;
+        }
+        @media print {
+            .container {
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
+    <div class="container mx-auto p-6 max-w-6xl">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                <div class="bg-gray-900 text-white p-8">
+                    <div class="text-center mb-8">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden">
+                            <img src="profile img.jpg" alt="大頭貼" class="w-full h-full object-cover">
+                        </div>
+                        <h1 class="text-2xl font-bold mb-2">SHENG-GANG HUANG</h1>
+                        <h1 class="text-2xl font-bold mb-4">小剛</h1>
+                        <div class="h-1 w-16 bg-blue-500 mx-auto"></div>
+                    </div>
 
-<div class="resume">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4 text-blue-400">個人資訊</h3>
+                            <div class="personal-info-item">
+                                <i class="fas fa-birthday-cake"></i>
+                                <div>
+                                    <div class="text-sm text-gray-300">出生日期</div>
+                                    <div>1999/12/23</div>
+                                </div>
+                            </div>
+                            <div class="personal-info-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <div class="text-sm text-gray-300">兵役狀態</div>
+                                    <div>役畢</div>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="block block-header">
-        <div class="profile-image-wrapper">
-            <img src="profileimg.jpg" alt="Profile Picture" class="profile-image">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4 text-blue-400">聯絡方式</h3>
+                            <div class="personal-info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <div class="text-sm text-gray-300">Email</div>
+                                    <div class="text-sm">xiaogangtw@gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="personal-info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <div class="text-sm text-gray-300">電話</div>
+                                    <div class="text-sm">更新中...</div>
+                                </div>
+                            </div>
+                            <div class="personal-info-item">
+                                <i class="fab fa-linkedin"></i>
+                                <div>
+                                    <div class="text-sm text-gray-300">社群</div>
+                                    <div class="text-sm">更新中...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 p-8">
+                    <section class="mb-10">
+                        <h2 class="text-2xl font-bold mb-6 section-title">Education</h2>
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-semibold text-gray-900">國立台北大學</h3>
+                                    <p class="text-blue-600 font-medium">經濟學系</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">2018-2022</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-semibold text-gray-900">新北市立淡水商工</h3>
+                                    <p class="text-blue-600 font-medium">資料處理科</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">2015-2018</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb-10">
+                        <h2 class="text-2xl font-bold mb-6 section-title">Work Experience</h2>
+                        <div class="space-y-6">
+                            <div class="job-item">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-gray-900">行銷美編</h3>
+                                        <p class="text-blue-600 font-medium">台灣諾得股份有限公司</p>
+                                    </div>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">2024.07-2025.07</span>
+                                </div>
+                            </div>
+                            
+                            <div class="job-item">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-gray-900">行銷企劃</h3>
+                                        <p class="text-blue-600 font-medium">財團法人中衛發展中心</p>
+                                    </div>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">2024.03-2024.07</span>
+                                </div>
+                            </div>
+                            
+                            <div class="job-item">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-gray-900">法務助理管理員</h3>
+                                        <p class="text-blue-600 font-medium">華碩電腦股份有限公司</p>
+                                    </div>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">2023.02-2023.06</span>
+                                </div>
+                            </div>
+                            
+                            <div class="job-item">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-gray-900">資訊工程師</h3>
+                                        <p class="text-blue-600 font-medium">台灣增輝藝品有限公司</p>
+                                    </div>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">2021.04-2022.07</span>
+                                </div>
+                            </div>
+                            
+                            <div class="job-item">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div class="flex-1">
+                                        <h3 class="text-lg font-semibold text-gray-900">法務助理管理員</h3>
+                                        <p class="text-blue-600 font-medium">華碩電腦股份有限公司</p>
+                                    </div>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">2019.07-2021.02</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb-10">
+                        <h2 class="text-2xl font-bold mb-6 section-title">Certificate</h2>
+                        <div class="flex flex-wrap">
+                            <span class="certificate-tag">電腦軟體應用(丙級)</span>
+                            <span class="certificate-tag">ISO-14064</span>
+                            <span class="certificate-tag">ISO-14067</span>
+                            <span class="certificate-tag">Google Analytics (分析)</span>
+                            <span class="certificate-tag">信託業務員</span>
+                            <span class="certificate-tag">投信投顧法規(乙科)</span>
+                            <span class="certificate-tag">金融常識道德</span>
+                            <span class="certificate-tag">TQC-WORD</span>
+                            <span class="certificate-tag">TQC-Powerpoint</span>
+                        </div>
+                    </section>
+
+                    <section class="mb-10">
+                        <h2 class="text-2xl font-bold mb-6 section-title">Portfolio</h2>
+                        <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                            <i class="fas fa-folder-open text-4xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-500 text-lg">作品集更新中</p>
+                            <p class="text-gray-400 text-sm mt-2">In the process of being updated</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="block block-info">
-        <p class="name">SHENG-GANG HUANG</p>
-        <p class="personal-details">出生:1999/12/23</p>
-    </div>
-
-    <div class="block">
-        <h2 class="section-title">Education</h2>
-        <ul>
-            <li>
-                <div class="item-primary">國立台北大學</div>
-                <div class="item-secondary">經濟學系 | 2018-2022</div>
-            </li>
-            <li>
-                <div class="item-primary">新北市立淡水商工</div>
-                <div class="item-secondary">資料處理科 | 2015-2018</div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="block">
-        <h2 class="section-title">Work Experience</h2>
-        <ul>
-            <li>
-                <div class="item-primary">行銷美編</div>
-                <div class="item-secondary">台灣諾得股份有限公司 | 2024.07-2025.07</div>
-            </li>
-            <li>
-                <div class="item-primary">行銷企劃</div>
-                <div class="item-secondary">財團法人中衛發展中心 | 2024.03-2024.07</div>
-            </li>
-            <li>
-                <div class="item-primary">法務助理管理員</div>
-                <div class="item-secondary">華碩電腦股份有限公司 | 2023.02-2023.06</div>
-            </li>
-             <li>
-                <div class="item-primary">資訊工程師</div>
-                <div class="item-secondary">台灣增輝藝品有限公司 | 2021.04-2022.07</div>
-            </li>
-             <li>
-                <div class="item-primary">法務助理管理員</div>
-                <div class="item-secondary">華碩電腦股份有限公司 | 2019.07-2021.02</div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="block">
-        <h2 class="section-title">Certificate</h2>
-        <ul class="certificates-list">
-            <li>電腦軟體應用(丙級)</li>
-            <li>ISO-14064</li>
-            <li>ISO-14067</li>
-            <li>Google Analytics(分析)</li>
-            <li>信託業務員</li>
-            <li>投信投顧法規(乙科)</li>
-            <li>金融常識道德</li>
-            <li>TQC-WORD</li>
-            <li>TQC-Powerpoint</li>
-        </ul>
-    </div>
-
-    <div class="block">
-        <h2 class="section-title">Portfolio</h2>
-        <p>In the process of being updated</p>
-    </div>
-
-</div>
-
 </body>
 </html>
